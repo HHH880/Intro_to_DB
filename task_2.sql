@@ -4,8 +4,8 @@ CREATE DATABASE IF NOT EXISTS alx_book_store;
 -- USE DATABASE
 USE alx_book_store;
 
--- AUTHORS TABLE
-CREATE TABLE IF NOT EXISTS authors (
+-- AUTHORS TABLE (CASE-SENSITIVE)
+CREATE TABLE IF NOT EXISTS Authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
     author_name VARCHAR(255) NOT NULL
 );
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS books (
     author_id INT NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     published_date DATE,
-    FOREIGN KEY (author_id) REFERENCES authors(author_id)
+    FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 );
 
 -- CUSTOMERS TABLE

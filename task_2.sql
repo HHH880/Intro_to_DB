@@ -7,13 +7,13 @@ USE alx_book_store;
 -- AUTHORS TABLE
 CREATE TABLE IF NOT EXISTS Authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
-    author_name VARCHAR(255) NOT NULL
+    author_name VARCHAR(215) NOT NULL
 );
 
--- BOOKS TABLE (CASE-SENSITIVE)
+-- BOOKS TABLE
 CREATE TABLE IF NOT EXISTS Books (
     book_id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
+    title VARCHAR(215) NOT NULL,
     author_id INT NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     published_date DATE,
@@ -21,15 +21,15 @@ CREATE TABLE IF NOT EXISTS Books (
 );
 
 -- CUSTOMERS TABLE
-CREATE TABLE IF NOT EXISTS Customers (
+CREATE TABLE IF NOT EXISTS customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
+    customer_name VARCHAR(215) NOT NULL,
+    email VARCHAR(215) NOT NULL,
     address TEXT
 );
 
 -- ORDERS TABLE
-CREATE TABLE IF NOT EXISTS Orders (
+CREATE TABLE IF NOT EXISTS orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NOT NULL,
     order_date DATE NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS Orders (
 );
 
 -- ORDER DETAILS TABLE
-CREATE TABLE IF NOT EXISTS Order_details (
+CREATE TABLE IF NOT EXISTS order_details (
     order_detail_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
     book_id INT NOT NULL,

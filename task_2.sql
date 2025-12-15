@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS Customers (
     address TEXT
 );
 
--- ORDERS TABLE (CASE-SENSITIVE)
+-- ORDERS TABLE
 CREATE TABLE IF NOT EXISTS Orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NOT NULL,
@@ -36,12 +36,12 @@ CREATE TABLE IF NOT EXISTS Orders (
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
--- ORDER DETAILS TABLE
-CREATE TABLE IF NOT EXISTS Order_details (
+-- ORDER DETAILS TABLE (CASE-SENSITIVE)
+CREATE TABLE IF NOT EXISTS Order_Details (
     order_detail_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
     book_id INT NOT NULL,
-    quantity INT NOT NULL,
+    quantity DOUBLE NOT NULL,
     FOREIGN KEY (order_id) REFERENCES Orders(order_id),
     FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
